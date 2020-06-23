@@ -1,4 +1,4 @@
-# nightwatch
+# NightwatchJS 
 Simple nightwatch test on Drupal Site.
 
 Prerequisites:
