@@ -29,10 +29,10 @@ describe('DemoApp - ClassicRunner', function () {
         SuiteConfig = new Configuration()
 
         eyes.setSaveDiffs(true);
-        await eyes.open(browser, 'Homepage - H&M', 'PLP', new RectangleSize(1440, 766));
+        await eyes.open(browser, 'Homepage - Sitename', 'Home', new RectangleSize(1440, 766));
 
         // Navigate the browser to the "Baseline" URL.
-        await browser.get("http://nightwatch-testsite.dd:8083/");
+        await browser.get("http://baselineURL.com/");
 
 
         // Visual checkpoint #1 - Check the app page.
@@ -47,13 +47,13 @@ describe('DemoApp - ClassicRunner', function () {
         SuiteConfig = new Configuration()
 
         eyes.setSaveDiffs(false);
-        await eyes.open(browser, 'Homepage - H&M', 'PLP', new RectangleSize(1440, 766));
+        await eyes.open(browser, 'Homepage - Sitename', 'Home', new RectangleSize(1440, 766));
 
         // Navigate the browser to the "Checkpoint" Page.
-        await browser.get("http://testfactory.dd:8083/");
+        await browser.get("http://comparisonurl.com/");
 
         // Visual checkpoint #2 - Check the app page.
-        await eyes.check("plp", Target.window().fully());
+        await eyes.check("Home", Target.window().fully());
 
         // End the test.
         await eyes.close(true);
